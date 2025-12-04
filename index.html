@@ -21,17 +21,38 @@
 
     /* ✦ 雲朵 */
     .cloud {
-        position: absolute;
-        opacity: 0.9;
-        animation: float 6s ease-in-out infinite;
-        pointer-events: none;
-        z-index: 1;
-    }
-    @keyframes float {
-        0% { transform: translateY(0px); }
-        50% { transform: translateY(-12px); }
-        100% { transform: translateY(0px); }
-    }
+    position: absolute;
+    opacity: 0.95;
+    z-index: 1;
+    animation: float 6s ease-in-out infinite;
+}
+
+.cloud1 {
+    top: 20px;
+    left: 10px;
+    width: 120px;
+}
+
+.cloud2 {
+    top: 80px;
+    right: 20px;
+    width: 150px;
+    animation-duration: 7s;
+}
+
+.cloud3 {
+    top: 150px;
+    left: 35%;
+    width: 180px;
+    animation-duration: 5.5s;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
+    100% { transform: translateY(0px); }
+}
+
 
     /* ✦ 木牌 */
     .wood-sign {
