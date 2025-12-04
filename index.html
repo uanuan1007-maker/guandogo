@@ -19,41 +19,6 @@
         color: #4a2c00;
     }
 
-    /* ✦ 雲朵 */
-    .cloud {
-    position: absolute;
-    opacity: 0.95;
-    z-index: 1;
-    animation: float 6s ease-in-out infinite;
-}
-
-.cloud1 {
-    top: 20px;
-    left: 10px;
-    width: 120px;
-}
-
-.cloud2 {
-    top: 80px;
-    right: 20px;
-    width: 150px;
-    animation-duration: 7s;
-}
-
-.cloud3 {
-    top: 150px;
-    left: 35%;
-    width: 180px;
-    animation-duration: 5.5s;
-}
-
-@keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-12px); }
-    100% { transform: translateY(0px); }
-}
-
-
     /* ✦ 木牌 */
     .wood-sign {
         background: #dcb980;
@@ -137,17 +102,10 @@
 
 <body>
 
-<!-- ✦ 三色漂浮雲朵-->
-<img src="https://i.imgur.com/2pf6bMb.png" class="cloud" style="top:20px; left:10px; width:130px;">
-<img src="https://i.imgur.com/yU2gGhc.png" class="cloud" style="top:110px; right:15px; width:150px;">
-<img src="https://i.imgur.com/6x0hB2V.png" class="cloud" style="top:190px; left:35%; width:170px;">
-
-
 <!-- ✦ 標題 -->
 <h1 style="text-align:center; margin-top: 40px; font-size:30px; font-weight:700;">
     勇闖挑戰 GUANDO GO!
 </h1>
-<div class="sub">文化探索 × 自我實踐</div>
 
 
 <!-- ✦ 開始闖關按鈕 -->
