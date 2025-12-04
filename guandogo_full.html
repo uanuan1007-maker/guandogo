@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>勇闖挑戰｜GUANDO GO!</title>
+
+<style>
+    body {
+        font-family: "Noto Sans TC", sans-serif;
+        background: #0f1e3a;
+        margin: 0;
+        padding: 20px;
+        color: #fff;
+    }
+
+    h1, h2 {
+        color: #ffdf7f;
+        text-align: center;
+        margin-bottom: 5px;
+        font-weight: 700;
+    }
+
+    .sub {
+        text-align: center;
+        color: #fff8dd;
+        margin-bottom: 25px;
+        font-size: 15px;
+    }
+
+    .card {
+        background: #16274e;
+        border: 2px solid #d7a542;
+        border-radius: 12px;
+        padding: 20px;
+        margin-bottom: 25px;
+        box-shadow: 0 0 12px #00000040;
+        display: none;
+    }
+
+    .card.active {
+        display: block;
+    }
+
+    .question {
+        font-size: 15px;
+        margin: 10px 0;
+    }
+
+    input[type="text"] {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+        border-radius: 6px;
+        border: none;
+        margin-top: 10px;
+    }
+
+    button {
+        width: 100%;
+        padding: 14px;
+        margin-top: 15px;
+        background: linear-gradient(90deg, #ffdf7f, #f5c04a);
+        color: #0f1e3a;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: 700;
+        cursor: pointer;
+    }
+
+    .result {
+        margin-top: 10px;
+        font-size: 15px;
+        font-weight: 700;
+    }
+</style>
+
+<script>
+function checkAnswer(inputId, correctKeywords, nextCardId) {
+    const val = document.getElementById(inputId).value.trim();
+    const feedback = document.getElementById(inputId + "-result");
+
+    const ok = correctKeywords.some(k => val.includes(k));
+
+    if (ok) {
+        feedback.style.color = "#7CFC00";
+        feedback.innerHTML = "✔ 正確！前往下一關！";
+
+        document.getElementById(nextCardId).classList.add("active");
+        document.getElementById(nextCardId).scrollIntoView({ behavior: "smooth" });
+
+    } else {
+        feedback.style.color = "#ff6b6b";
+        feedback.innerHTML = "✘ 再想想看！";
+    }
+}
+</script>
+
+</head>
+<body>
+
+<h1>勇闖挑戰 GUANDO GO!</h1>
+<div class="sub">文化探索 × 自我實踐</div>
+
+<button onclick="document.getElementById('card1').classList.add('active'); 
+                 document.getElementById('card1').scrollIntoView({behavior:'smooth'})">
+    開始闖關
+</button>
+
+<!-- 關卡 1 -->
+<div class="card" id="card1">
+    <h2>關卡 1｜勇氣起點・三將君</h2>
+    <p class="question">三將君展現哪些品格？（例：忠義、勇氣…）</p>
+    <input id="ans1" type="text" placeholder="請輸入答案">
+    <button onclick="checkAnswer('ans1',['忠','勇','守護'],'card2')">提交答案</button>
+    <div class="result" id="ans1-result"></div>
+</div>
+
+<!-- 關卡 2 -->
+<div class="card" id="card2">
+    <h2>關卡 2｜土地的庇護・福德殿</h2>
+    <p class="question">大家通常向土地公祈求什麼？</p>
+    <input id="ans2" type="text" placeholder="請輸入答案">
+    <button onclick="checkAnswer('ans2',['平安','順利','保佑'],'card3')">提交答案</button>
+    <div class="result" id="ans2-result"></div>
+</div>
+
+<!-- 關卡 3 -->
+<div class="card" id="card3">
+    <h2>關卡 3｜財運之路・財神洞</h2>
+    <p class="question">聚寶盆象徵什麼？</p>
+    <input id="ans3" type="text" placeholder="請輸入答案">
+    <button onclick="checkAnswer('ans3',['財','運','福'],'card4')">提交答案</button>
+    <div class="result" id="ans3-result"></div>
+</div>
+
+<!-- 關卡 4 -->
+<div class="card" id="card4">
+    <h2>關卡 4｜天上界・凌霄寶殿</h2>
+    <p class="question">龍象徵什麼力量？</p>
+    <input id="ans4" type="text" placeholder="請輸入答案">
+    <button onclick="checkAnswer('ans4',['力量','權威','守護'],'card5')">提交答案</button>
+    <div class="result" id="ans4-result"></div>
+</div>
+
+<!-- 關卡 5 -->
+<div class="card" id="card5">
+    <h2>關卡 5｜智慧的守護者・文昌帝君</h2>
+    <p class="question">大家通常向文昌帝君祈求什麼？</p>
+    <input id="ans5" type="text" placeholder="請輸入答案">
+    <button onclick="checkAnswer('ans5',['考試','智慧','學業'],'card6')">提交答案</button>
+    <div class="result" id="ans5-result"></div>
+</div>
+
+<!-- 關卡 6 -->
+<div class="card" id="card6">
+    <h2>關卡 6｜海上的守護・媽祖殿</h2>
+    <p class="question">媽祖主要守護哪些人？</p>
+    <input id="ans6" type="text" placeholder="請輸入答案">
+    <button onclick="checkAnswer('ans6',['漁民','航海','旅人'],'card7')">提交答案</button>
+    <div class="result" id="ans6-result"></div>
+</div>
+
+<!-- 關卡 7 -->
+<div class="card" id="card7">
+    <h2>關卡 7｜千手千眼・千手觀音</h2>
+    <p class="question">為什麼觀音有這麼多手？</p>
+    <input id="ans7" type="text" placeholder="請輸入答案">
+    <button onclick="checkAnswer('ans7',['幫助','慈悲','救苦救難'],'final')">提交答案</button>
+    <div class="result" id="ans7-result"></div>
+</div>
+
+<!-- 最終區 -->
+<div class="card" id="final">
+    <h2>🎉 恭喜完成七關挑戰！</h2>
+    <p class="question">請向工作人員出示此畫面。</p>
+</div>
+
+</body>
+</html>
