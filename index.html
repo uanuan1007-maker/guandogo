@@ -6,7 +6,7 @@
 
 <title>勇闖挑戰｜GUANDO GO!</title>
 
-<!-- ✦ 主視覺風格字體（B：更柔軟、親民、溫暖） -->
+<!-- ✦ 字體 -->
 <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
@@ -19,7 +19,7 @@
         color: #4a2c00;
     }
 
-    /* ✦ 三色漂浮雲朵（主視覺紅橘 / 藍綠 / 黃白） */
+    /* ✦ 雲朵 */
     .cloud {
         position: absolute;
         opacity: 0.9;
@@ -33,7 +33,7 @@
         100% { transform: translateY(0px); }
     }
 
-    /* ✦ 木牌（神社感 / 關卡標題使用） */
+    /* ✦ 木牌 */
     .wood-sign {
         background: #dcb980;
         border: 3px solid #8b5a2b;
@@ -96,7 +96,7 @@
         font-weight: 700;
     }
 
-    /* ✦ 浮動旗子選單（A：活潑有遊戲感） */
+    /* ✦ 浮動旗子選單 */
     .menu-flag {
         position: fixed;
         right: 16px;
@@ -116,7 +116,7 @@
 
 <body>
 
-<!-- ✦ 三色漂浮雲朵（固定在背景，不擋操作） -->
+<!-- ✦ 三色漂浮雲朵-->
 <img src="https://i.imgur.com/2pf6bMb.png" class="cloud" style="top:20px; left:10px; width:130px;">
 <img src="https://i.imgur.com/yU2gGhc.png" class="cloud" style="top:110px; right:15px; width:150px;">
 <img src="https://i.imgur.com/6x0hB2V.png" class="cloud" style="top:190px; left:35%; width:170px;">
@@ -241,7 +241,7 @@ function startGame() {
 }
 
 
-/* ----------- 核對答案（多關鍵字，其中一個符合即通關） ----------- */
+/* ----------- 核對答案----------- */
 function checkAnswer(inputId, keywords, nextId, hideId) {
     const input = document.getElementById(inputId).value.trim();
     const resultBox = document.getElementById(inputId + "-result");
